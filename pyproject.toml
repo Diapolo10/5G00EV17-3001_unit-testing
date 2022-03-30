@@ -80,6 +80,10 @@ tox-gh-actions = '^2.9.1'
 "Changelog" = 'https://github.com/Diapolo10/unit_testing/blob/main/CHANGELOG.md'
 
 
+[tool.pylint.MASTER]
+ignore='tests'
+
+
 [tool.pylint.'MESSAGES CONTROL']
 max-line-length = 120
 disable = [
