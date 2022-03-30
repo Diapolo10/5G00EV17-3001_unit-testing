@@ -1,5 +1,5 @@
 
-# unit_testing Change Log
+# 5G00EV17-3001 Unit testing Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -66,13 +66,32 @@ In-progress update goes here.
 
 _______________________________________________________________________________
 
-## [0.1.0] - YYYY-MM-DD
+## [1.0.0] - 2022-03-30
 
 This is the initial version of the project.
 
 ### Added
 
-- The base project
+- Example project featuring a Date class
+- Unit tests
+- Coverage reports
+- Documentation for installation and unit tests
+
+### Changed
+
+- Updated localisation files
+
+### Fixed
+
+- Linter errors
+
+### Removed
+
+- Dread
+
+### Security
+
+- Project has Snyk scanning enabled
 
 <!-- markdownlint-configure-file {
     "MD022": false,

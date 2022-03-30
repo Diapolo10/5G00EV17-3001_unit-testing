@@ -26,8 +26,8 @@ __init__.py:F401,F403,F405\
 
 [tool.poetry]
 name = 'unit_testing'
-version = '0.1.0'
-description = "A template Poetry project structure."
+version = '1.0.0'
+description = "An example project for showcasing unit testing."
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
@@ -36,15 +36,15 @@ include = ['CHANGELOG.md', 'LICENSE',]
 license = 'MIT'
 readme = 'README.md'
 
-homepage = 'https://pypi.org/project/unit_testing/'
-repository = 'https://github.com/Diapolo10/unit_testing'
-documentation = 'https://github.com/Diapolo10/unit_testing/tree/main/docs'
+homepage = 'https://pypi.org/project/5G00EV17-3001_unit-testing/'
+repository = 'https://github.com/Diapolo10/5G00EV17-3001_unit-testing'
+documentation = 'https://github.com/Diapolo10/5G00EV17-3001_unit-testing/tree/main/docs'
 
 keywords = [
     'python3',
 ]
 classifiers = [
-    'Development Status :: 3 - Alpha',
+    'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
     'Programming Language :: Python :: 3.6',
