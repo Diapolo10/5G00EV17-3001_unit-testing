@@ -1,4 +1,4 @@
-"""Stub unit test file"""
+"""Unit tests for the date.Date class"""
 
 import pytest
 
@@ -52,3 +52,19 @@ def test_date_error():
 def test_month_error():
     with pytest.raises(ValueError):
         d = date.Date(7, 21, 1998)
+
+
+def test_print(default_date):
+    assert default_date.print() is None
+
+
+def test_leap_year():
+    d1 = date.Date(1, 1, 2000)
+    d2 = date.Date(1, 1, 2100)
+    d3 = date.Date(1, 1, 2004)
+    d4 = date.Date(1, 1, 2001)
+
+    assert d1.leap_year() == True
+    assert d2.leap_year() == False
+    assert d3.leap_year() == True
+    assert d4.leap_year() == False

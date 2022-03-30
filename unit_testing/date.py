@@ -68,7 +68,5 @@ class Date:
             return True
         if self.year % 100 == 0:
             return False
-        if self.year % 4 == 0:
-            return True
-
-        return False
+        
+        return self.year % 4 == 0
