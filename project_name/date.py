@@ -43,6 +43,8 @@ class Date:
         if self.day + 1 > max_days:
             self.month += 1
             self.day = 1
+        else:
+            self.day += 1
 
         if self.month > 12:
             self.month = 1
