@@ -160,6 +160,7 @@ def test_date_days_since_new_year():
 
     d = date.Date(31, 1, 2022)
     d1 = date.Date(31, 12, 2022)
+
     assert d.days_since_new_year() == 30
     assert d1.days_since_new_year() == 364
 
