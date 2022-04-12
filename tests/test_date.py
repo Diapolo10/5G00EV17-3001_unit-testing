@@ -159,8 +159,9 @@ def test_date_days_since_new_year():
     """Tests calculating number of days since the last new year"""
 
     d = date.Date(31, 1, 2022)
-
+    d1 = date.Date(31, 12, 2022)
     assert d.days_since_new_year() == 30
+    assert d1.days_since_new_year() == 364
 
 
 def test_week_later(default_date):
