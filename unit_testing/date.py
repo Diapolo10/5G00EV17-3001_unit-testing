@@ -1,6 +1,6 @@
 """Contains the implementation of the Date class"""
 
-from typing import Optional
+from typing import Any, Optional
 
 
 class Date:
@@ -58,8 +58,8 @@ class Date:
 
         return f"{self.day}/{self.month}/{self.year}"
 
-    def __gt__(self, other):
-        """Implements greater than for Date objects"""
+    def __gt__(self, other: Any):
+        """Implement greater than for Date objects"""
 
         if isinstance(other, Date):
             if self.year > other.year:
@@ -70,21 +70,25 @@ class Date:
                 return True
         return False
 
-    def __ge__(self, other):
+    def __ge__(self, other: Any) -> bool:
+        """Implement greater than or equal for Date objects"""
+
         return self > other or self == other
 
-    def __le__(self, other):
+    def __le__(self, other: Any) -> bool:
+        """Implement less than or equal for Date objects"""
+
         return self < other or self == other
 
-    def __lt__(self, other):
-        """Implements less than for Date objects"""
+    def __lt__(self, other: Any) -> bool:
+        """Implement less than for Date objects"""
 
         if isinstance(other, Date):
             return not self >= other
         return False
 
-    def __eq__(self, other):
-        """Checks for date object equality"""
+    def __eq__(self, other: Any) -> bool:
+        """Check for date object equality"""
 
         if isinstance(other, Date):
             return (
@@ -125,7 +129,7 @@ class Date:
             self.day += 1
 
     def print(self):
-        """Prints the current day"""
+        """Print the current day"""
 
         print(self)
 
@@ -140,7 +144,7 @@ class Date:
         return self.year % 4 == 0
 
     def days_between(self, other: 'Date') -> int:
-        """Returns the number of days between two given date objects"""
+        """Return the number of days between two given date objects"""
 
         days = 0
 
@@ -158,14 +162,14 @@ class Date:
         return days
 
     def days_since_new_year(self) -> int:
-        """Returns the number of days since new year"""
+        """Return the number of days since new year"""
 
         new_year = Date(1, 1, self.year)
         return self.days_between(new_year)
 
 
 def week_later(date: Date) -> Date:
-    """Returns a new Date object a week later from the given date"""
+    """Return a new Date object a week later from the given date"""
 
     new_date = Date(date.day, date.month, date.year)
     for _ in range(7):
