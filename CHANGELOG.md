@@ -50,19 +50,41 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [0.1.1] - YYYY-MM-DD
+## [1.0.1] - 2022-04-12
 
-In-progress update goes here.
+This update adds some additional test cases for corner cases, improves
+type hinting, and adds missing docstrings
 
 ### Added
 
-- Stuff
+- More docstrings
+- More test cases
+- Documentation is now linked in `README.md`
 
 ### Changed
 
+- Improved type hinting
 - Updated localisation files
 
 -->
+
+_______________________________________________________________________________
+
+## [1.0.1] - 2022-04-12
+
+This update adds some additional test cases for corner cases, improves
+type hinting, and adds missing docstrings
+
+### Added
+
+- More docstrings
+- More test cases
+- Documentation is now linked in `README.md`
+
+### Changed
+
+- Improved type hinting
+- Updated localisation files
 
 _______________________________________________________________________________
 
@@ -79,6 +101,7 @@ This is the initial version of the project.
 
 ### Changed
 
+- Updated `README.md` to contain more useful information
 - Updated localisation files
 
 ### Fixed
