@@ -157,7 +157,6 @@ class Date:
         while start < destination:
             start.next_day()
             days += 1
-            print(start, destination)
 
         return days
 
