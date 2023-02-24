@@ -65,7 +65,7 @@ python = "^3.6"
 [tool.poetry.dev-dependencies]
 coverage = {version = '^6.2', extras = ['toml',]}
 flake8 = '^4.0.1'
-mypy = '^0.942'
+mypy = '^0.971'
 pylint = '^2.12.0'
 pyproject-flake8 = '^4.0.1'
 pytest = '^7.0.1'
