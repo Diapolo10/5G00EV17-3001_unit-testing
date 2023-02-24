@@ -50,23 +50,37 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.0.1] - 2022-04-12
+## [1.0.2] - 2023-02-24
 
-This update adds some additional test cases for corner cases, improves
-type hinting, and adds missing docstrings
+This update adds a missing `py.typed` file, and updates dependencies.
 
 ### Added
 
-- More docstrings
-- More test cases
-- Documentation is now linked in `README.md`
+- `py.typed`
 
 ### Changed
 
-- Improved type hinting
+- Fixed some wording in `README.md`
+- Updated dependencies
 - Updated localisation files
 
 -->
+
+_______________________________________________________________________________
+
+## [1.0.2] - 2023-02-24
+
+This update adds a missing `py.typed` file, and updates dependencies.
+
+### Added
+
+- `py.typed`
+
+### Changed
+
+- Fixed some wording in `README.md`
+- Updated dependencies
+- Updated localisation files
 
 _______________________________________________________________________________
 
