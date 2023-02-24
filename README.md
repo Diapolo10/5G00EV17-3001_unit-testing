@@ -23,9 +23,9 @@ Python library, and adding unit tests to it. The project uses Pytest.
 
 The main project has no library dependencies, but the actual unit testing
 part relies on several packages listed in
-[`pyproject.toml`](./pyproject.toml). But in general, you'll need:
+[`pyproject.toml`][pyproject.toml]. But in general, you'll need:
 
-- Python 3.6 or newer
+- Python 3.7 or newer
 - Poetry
 
 The project is automatically tested on the latest versions of Windows,
@@ -35,23 +35,28 @@ may work, but is not guaranteed.
 
 ### Installation
 
-Please see the documentation [here](./docs/installation.md).
+Please see the documentation [here][installation].
 
 ### Running unit tests
 
-Please see the documentation [here](./docs/running_unit_tests.md).
+Please see the documentation [here][running unit tests].
 
 ## Version history
 
-The project's changelog can be found [here](./CHANGELOG.md).
+The project's changelog can be found [here][changelog].
 
 ## License
 
-This project is licensed under the MIT license - see the [`LICENSE`](./LICENSE)-file for details.
+This project is licensed under the MIT license - see the [`LICENSE`][license]-file for details.
 
 ## Acknowledgements
 
 Inspiration, code snippets, debugging help, etc.
 
-- Code Bullet
-- The Arcade library team
+- My fellow team members
+
+[pyproject.toml]: ./pyproject.toml
+[installation]: ./docs/installation.md
+[running unit tests]: ./docs/running_unit_tests.md
+[changelog]: ./CHANGELOG.md
+[license]: ./LICENSE
