@@ -20,7 +20,8 @@ jobs:
           py38,
           py39,
           py310,
-          pypy3
+          py311,
+          pypy3,
         ]
         include:
           - tox-env: py37
@@ -39,6 +40,8 @@ jobs:
             tox-env: pypy3
           - os: macos-latest
             tox-env: pypy3
+          - os: macos-latest
+            tox-env: py311
     env:
       TOXENV: ${{ matrix.tox-env }}
 

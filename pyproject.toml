@@ -26,7 +26,7 @@ __init__.py:F401,F403,F405\
 
 [tool.poetry]
 name = 'unit_testing'
-version = '1.0.1'
+version = '1.0.2'
 description = "An example project for showcasing unit testing."
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
@@ -47,11 +47,14 @@ classifiers = [
     'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: PyPy',
     'Typing :: Typed',
@@ -59,29 +62,25 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = '^3.7'
 
 
 [tool.poetry.dev-dependencies]
-coverage = {version = '^6.2', extras = ['toml',]}
-flake8 = '^4.0.1'
-mypy = '^0.971'
-pylint = '^2.12.0'
-pyproject-flake8 = '^4.0.1'
-pytest = '^7.0.1'
+coverage = {version = '^6.5.0', extras = ['toml',]}
+flake8 = '^5.0.4'
+mypy = '^1.0.1'
+pylint = '^2.13.9'
+pyproject-flake8 = '^5.0.4'
+pytest = '^7.2.1'
 pytest-cov = '^4.0.0'
 tox = '^3.28.0'
-tox-gh-actions = '^2.9.1'
+tox-gh-actions = '^2.12.0'
 
 
 [tool.poetry.urls]
 "Source code" = 'https://github.com/Diapolo10/unit_testing'
 "Tracker" = 'https://github.com/Diapolo10/unit_testing/issues'
 "Changelog" = 'https://github.com/Diapolo10/unit_testing/blob/main/CHANGELOG.md'
-
-
-[tool.pylint.MASTER]
-ignore='tests'
 
 
 [tool.pylint.'MESSAGES CONTROL']
@@ -92,7 +91,7 @@ disable = [
 
 
 [tool.pytest.ini_options]
-minversion = "6.0"
+minversion = "7.0"
 addopts = """
 --doctest-modules \
 --cov=./ \
@@ -114,10 +113,11 @@ isolated_build = True
 
 [gh-actions]
 python =
-    3.6: py36
     3.7: py37
     3.8: py38
     3.9: py39
+    3.10: py310
+    3.11: py311
     pypy-3.7: pypy3
 
 [gh-actions:env]
@@ -129,11 +129,10 @@ PLATFORM =
 [testenv]
 passenv = GITHUB_*
 deps =
-    coverage
-    coveralls[toml]
+    coverage[toml]
+    coverage[toml]
     pytest
     pytest-cov
-    wheel
 commands =
     coverage run -m pytest
 """
