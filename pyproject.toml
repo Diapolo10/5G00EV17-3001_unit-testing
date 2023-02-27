@@ -15,7 +15,7 @@ omit = [
 [tool.flake8]
 max-line-length = 120
 extend-ignore = ''  # https://www.flake8rules.com/
-max-complexity = 15  # Info: https://en.wikipedia.org/wiki/Cyclomatic_complexity
+max-complexity = 5  # Info: https://en.wikipedia.org/wiki/Cyclomatic_complexity
 per-file-ignores = """\
 # F401: Ignore "unused" imports
 # F403: Ignore star imports
@@ -47,7 +47,6 @@ classifiers = [
     'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
     'Programming Language :: Python :: 3.10',
@@ -60,19 +59,19 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = '^3.7'
+python = '^3.8.1'
 
 
 [tool.poetry.dev-dependencies]
 coverage = {version = '^7.2.0', extras = ['toml',]}
-flake8 = '^5.0.4'
+flake8 = '^6.0.0'
+flake8-pyproject = '^1.2.2'
 mypy = '^1.0.1'
 pylint = '^2.13.9'
-pyproject-flake8 = '^5.0.4'
 pytest = '^7.2.1'
 pytest-cov = '^4.0.0'
-tox = '^3.28.0'
-tox-gh-actions = '^2.12.0'
+tox = '^4.4.6'
+tox-gh-actions = '^3.0.0'
 
 
 [tool.poetry.urls]
@@ -111,12 +110,11 @@ isolated_build = True
 
 [gh-actions]
 python =
-    3.7: py37
     3.8: py38
     3.9: py39
     3.10: py310
     3.11: py311
-    pypy-3.7: pypy3
+    pypy-3.9: pypy3
 
 [gh-actions:env]
 PLATFORM =
