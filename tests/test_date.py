@@ -86,7 +86,7 @@ def test_date_print(default_date: Date, capsys: Generator[pytest.CaptureFixture[
     """'Tests' the printing functionality"""
 
     default_date.print()
-    captured = capsys.readouterr()  # type: ignore
+    captured = capsys.readouterr()  # type: ignore[attr-defined]
     assert captured.out == f'{DEFAULT_DAY}/{DEFAULT_MONTH}/{DEFAULT_YEAR}\n'
 
 
