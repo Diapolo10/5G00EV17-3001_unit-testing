@@ -3,7 +3,6 @@
 from enum import IntEnum, auto
 from typing import Any, Optional, Self
 
-
 DEFAULT_DAY = 1
 DEFAULT_MONTH = 1
 DEFAULT_YEAR = 1900

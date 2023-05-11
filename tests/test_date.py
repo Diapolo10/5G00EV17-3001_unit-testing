@@ -5,12 +5,12 @@ from collections.abc import Generator
 import pytest
 
 from unit_testing.date import (
-    Date,
-    Months,
-    week_later,
     DEFAULT_DAY,
     DEFAULT_MONTH,
     DEFAULT_YEAR,
+    Date,
+    Months,
+    week_later,
 )
 
 
