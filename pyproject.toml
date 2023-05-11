@@ -167,14 +167,11 @@ ban-relative-imports = "all"
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py36, py37, py38, py39, pypy3
+envlist = py311, pypy3
 isolated_build = True
 
 [gh-actions]
 python =
-    3.8: py38
-    3.9: py39
-    3.10: py310
     3.11: py311
     pypy-3.9: pypy3
 
@@ -187,7 +184,6 @@ PLATFORM =
 [testenv]
 passenv = GITHUB_*
 deps =
-    coverage[toml]
     coverage[toml]
     pytest
     pytest-cov
