@@ -5,8 +5,8 @@ import pytest
 from unit_testing import date
 
 
-@pytest.fixture
-def default_date():
+@pytest.fixture()
+def default_date() -> date.Date:
     """Creates a default date.Date object for testing"""
 
     return date.Date()
