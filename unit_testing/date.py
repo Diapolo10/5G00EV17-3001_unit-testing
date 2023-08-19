@@ -110,7 +110,7 @@ class Date:
             return not self >= other
         return False
 
-    def __eq__(self: Self, other: Any) -> bool:
+    def __eq__(self: Self, other: object) -> bool:
         """Check for date object equality"""
 
         if isinstance(other, Date):
