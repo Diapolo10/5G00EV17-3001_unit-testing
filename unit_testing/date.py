@@ -110,7 +110,7 @@ class Date:
             return not self >= other
         return False
 
-    def __eq__(self: Self, other: Any) -> bool:
+    def __eq__(self: Self, other: object) -> bool:
         """Check for date object equality"""
 
         if isinstance(other, Date):
@@ -154,7 +154,7 @@ class Date:
     def print(self: Self) -> None:  # noqa: A003
         """Print the current day"""
 
-        print(self)
+        print(self)  # noqa: T201
 
     def leap_year(self: Self) -> bool:
         """Check if the current year is a leap year"""
