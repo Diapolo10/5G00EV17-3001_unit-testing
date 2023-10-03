@@ -25,7 +25,7 @@ The main project has no library dependencies, but the actual unit testing
 part relies on several packages listed in
 [`pyproject.toml`][pyproject.toml]. But in general, you'll need:
 
-- Python 3.7 or newer
+- Python 3.11 or newer
 - Poetry
 
 The project is automatically tested on the latest versions of Windows,
