@@ -3,8 +3,8 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [CHANGELOG.md](http://changelog.md/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
+The format is based on [CHANGELOG.md][CHANGELOG.md]
+and this project adheres to [Semantic Versioning][Semantic Versioning].
 
 <!-- 
 TEMPLATE
@@ -50,21 +50,59 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.0.2] - 2023-02-24
+## [1.0.3] - 2023-10-03
 
-This update adds a missing `py.typed` file, and updates dependencies.
+Updated dependencies, moved source code to `src`, made Ruff rules stricter,
+and fixed outdated `Makefile`.
 
 ### Added
 
-- `py.typed`
+- Added new rules for Ruff
+- Added hash support for the `Date` class
 
 ### Changed
 
-- Fixed some wording in `README.md`
+- Moved the source code files under `src` to better match accepted best
+  practices
+- Updated outdated links in `CHANGELOG.md`
 - Updated dependencies
 - Updated localisation files
 
+### Fixed
+
+- Fixed `Makefile`'s linting (it was still using `pyproject-flake8`
+  instead of Ruff)
+- Various linter fixes
+- `README.md` had an old version number for Python, this is now fixed
+
 -->
+
+_______________________________________________________________________________
+
+## [1.0.3] - 2023-10-03
+
+Updated dependencies, moved source code to `src`, made Ruff rules stricter,
+and fixed outdated `Makefile`.
+
+### Added
+
+- Added new rules for Ruff
+- Added hash support for the `Date` class
+
+### Changed
+
+- Moved the source code files under `src` to better match accepted best
+  practices
+- Updated outdated links in `CHANGELOG.md`
+- Updated dependencies
+- Updated localisation files
+
+### Fixed
+
+- Fixed `Makefile`'s linting (it was still using `pyproject-flake8`
+  instead of Ruff)
+- Various linter fixes
+- `README.md` had an old version number for Python, this is now fixed
 
 _______________________________________________________________________________
 
@@ -129,6 +167,9 @@ This is the initial version of the project.
 ### Security
 
 - Project has Snyk scanning enabled
+
+[CHANGELOG.md]: https://keepachangelog.com/en/1.1.0/
+[Semantic Versioning]: http://semver.org/
 
 <!-- markdownlint-configure-file {
     "MD022": false,
