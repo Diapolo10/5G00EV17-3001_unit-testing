@@ -1,58 +1,58 @@
 [build-system]
-requires = ['poetry-core>=1.2.0', 'wheel',]
-build-backend = 'poetry.core.masonry.api'
+requires = ["poetry-core>=1.2.0", "wheel",]
+build-backend = "poetry.core.masonry.api"
 
 
 [tool.coverage.run]
 branch = true
 relative_files = true
 omit = [
-    '.tox/*',
-    'tests/*',
+    ".tox/*",
+    "tests/*",
 ]
 
 
 [tool.poetry]
-name = 'unit_testing'
-version = '1.0.3'
+name = "unit_testing"
+version = "1.0.3"
 description = "An example project for showcasing unit testing."
 
 packages = [
-    { include = 'unit_testing', from = 'src' },
+    { include = "unit_testing", from = "src" },
 ]
 
 authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
 
-include = ['CHANGELOG.md', 'LICENSE',]
-license = 'MIT'
-readme = 'README.md'
+include = ["CHANGELOG.md", "LICENSE",]
+license = "MIT"
+readme = "README.md"
 
-homepage = 'https://pypi.org/project/5G00EV17-3001_unit-testing/'
-repository = 'https://github.com/Diapolo10/5G00EV17-3001_unit-testing'
-documentation = 'https://github.com/Diapolo10/5G00EV17-3001_unit-testing/tree/main/docs'
+homepage = "https://pypi.org/project/5G00EV17-3001_unit-testing/"
+repository = "https://github.com/Diapolo10/5G00EV17-3001_unit-testing"
+documentation = "https://github.com/Diapolo10/5G00EV17-3001_unit-testing/tree/main/docs"
 
 keywords = [
-    'python3',
+    "python3",
 ]
 classifiers = [
-    'Development Status :: 5 - Production/Stable',
-    'License :: OSI Approved :: MIT License',
-    'Operating System :: OS Independent',
-    'Programming Language :: Python :: 3.11',
-    'Programming Language :: Python :: 3.12',
-    'Programming Language :: Python :: Implementation :: CPython',
-    'Programming Language :: Python :: Implementation :: PyPy',
-    'Typing :: Typed',
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Typing :: Typed",
 ]
 
 
 [tool.poetry.dependencies]
-python = '^3.11.0'
+python = "^3.11.0"
 
 
 [tool.poetry.group.dev.dependencies]
-mypy = '^1.1.1'
+mypy = "^1.1.1"
 
 
 [tool.poetry.group.linters]
@@ -60,7 +60,7 @@ optional = true
 
 
 [tool.poetry.group.linters.dependencies]
-ruff = '>=0.0.265,<0.0.293'
+ruff = "^0.1.3"
 
 
 [tool.poetry.group.tests]
@@ -68,16 +68,16 @@ optional = true
 
 
 [tool.poetry.group.tests.dependencies]
-pytest = '^7.2.2'
-pytest-cov = '^4.0.0'
-tox = '^4.4.8'
-tox-gh-actions = '^3.1.0'
+pytest = "^7.2.2"
+pytest-cov = "^4.0.0"
+tox = "^4.4.8"
+tox-gh-actions = "^3.1.0"
 
 
 [tool.poetry.urls]
-"Source code" = 'https://github.com/Diapolo10/unit_testing'
-"Tracker" = 'https://github.com/Diapolo10/unit_testing/issues'
-"Changelog" = 'https://github.com/Diapolo10/unit_testing/blob/main/CHANGELOG.md'
+"Source code" = "https://github.com/Diapolo10/unit_testing"
+"Tracker" = "https://github.com/Diapolo10/unit_testing/issues"
+"Changelog" = "https://github.com/Diapolo10/unit_testing/blob/main/CHANGELOG.md"
 
 
 [tool.pytest.ini_options]
@@ -91,81 +91,81 @@ addopts = """
 --ignore=docs/
 """
 testpaths = [
-    'tests',
+    "tests",
 ]
 
 [tool.ruff]
 select = [
-    'A',    # Builtins
-    'ANN',  # Annotations
-    'ARG',  # Unused arguments
-    'B',    # Bugbear
-    'BLE',  # Blind except
-    'C4',   # Comprehensions
-    'C90',  # mccabe
-    'COM',  # Commas
-    'D1',   # Undocumented public elements
-    'D2',   # Docstring conventions
-    'D3',   # Triple double quotes
-    'D4',   # Docstring terxt format
-    'DTZ',  # Datetimes
-    'EM',   # Error messages
-    'ERA',  # Commented-out code
-    'EXE',  # Executable
-    'F',    # Pyflakes
-    'FA',   # __future__ annotations
-    'FLY',  # F-strings
-    # 'FURB', # Refurb
-    'G',    # Logging format
-    'I',    # Isort
-    'ICN',  # Import conventions
-    'INP',  # Disallow PEP-420 (Implicit namespace packages)
-    'INT',  # gettext
-    'ISC',  # Implicit str concat
-    # 'LOG',  # Logging
-    'N',    # PEP-8 Naming
-    'NPY',  # Numpy
-    'PERF', # Unnecessary performance costs
-    'PGH',  # Pygrep hooks
-    'PIE',  # Unnecessary code
-    'PL',   # Pylint
-    'PT',   # Pytest
-    'PTH',  # Use Pathlib
-    'PYI',  # Stub files
-    'Q',    # Quotes
-    'RET',  # Return
-    'RUF',  # Ruff
-    'RSE',  # Raise
-    'S',    # Bandit
-    'SIM',  # Code simplification
-    'SLF',  # Private member access
-    'SLOT', # __slots__
-    'T10',  # Debugger
-    'T20',  # Print
-    'TCH',  # Type checking
-    'TID',  # Tidy imports
-    'TRY',  # Exception handling
-    'UP',   # Pyupgrade
-    'W',    # Warnings
-    'YTT',  # sys.version
+    "A",    # Builtins
+    "ANN",  # Annotations
+    "ARG",  # Unused arguments
+    "B",    # Bugbear
+    "BLE",  # Blind except
+    "C4",   # Comprehensions
+    "C90",  # mccabe
+    "COM",  # Commas
+    "D1",   # Undocumented public elements
+    "D2",   # Docstring conventions
+    "D3",   # Triple double quotes
+    "D4",   # Docstring terxt format
+    "DTZ",  # Datetimes
+    "EM",   # Error messages
+    "ERA",  # Commented-out code
+    "EXE",  # Executable
+    "F",    # Pyflakes
+    "FA",   # __future__ annotations
+    "FLY",  # F-strings
+    # "FURB", # Refurb
+    "G",    # Logging format
+    "I",    # Isort
+    "ICN",  # Import conventions
+    "INP",  # Disallow PEP-420 (Implicit namespace packages)
+    "INT",  # gettext
+    "ISC",  # Implicit str concat
+    # "LOG",  # Logging
+    "N",    # PEP-8 Naming
+    "NPY",  # Numpy
+    "PERF", # Unnecessary performance costs
+    "PGH",  # Pygrep hooks
+    "PIE",  # Unnecessary code
+    "PL",   # Pylint
+    "PT",   # Pytest
+    "PTH",  # Use Pathlib
+    "PYI",  # Stub files
+    "Q",    # Quotes
+    "RET",  # Return
+    "RUF",  # Ruff
+    "RSE",  # Raise
+    "S",    # Bandit
+    "SIM",  # Code simplification
+    "SLF",  # Private member access
+    "SLOT", # __slots__
+    "T10",  # Debugger
+    "T20",  # Print
+    "TCH",  # Type checking
+    "TID",  # Tidy imports
+    "TRY",  # Exception handling
+    "UP",   # Pyupgrade
+    "W",    # Warnings
+    "YTT",  # sys.version
 ]
 ignore = [
-    'D203',  # One blank line before class docstring
-    'D212',  # Multi-line summary first line
-    'PLR0913',  # Too many arguments
-    'Q000',  # Single quotes fond but double quotes preferred
+    "D203",  # One blank line before class docstring
+    "D212",  # Multi-line summary first line
+    "PLR0913",  # Too many arguments
+    "Q000",  # Single quotes fond but double quotes preferred
 ]
 ignore-init-module-imports = true
 line-length = 120
 # preview = true
 show-fixes = true
-src = ['src',]
-target-version = 'py311'
+src = ["src",]
+target-version = "py311"
 
 
 [tool.ruff.flake8-quotes]
-docstring-quotes = 'double'
-multiline-quotes = 'double'
+docstring-quotes = "double"
+multiline-quotes = "double"
 
 
 [tool.ruff.mccabe]
@@ -174,8 +174,8 @@ max-complexity = 10
 
 [tool.ruff.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
-'__init__.py' = ['F401','F403','F405',]
-'tests/*' = ['ANN', 'ARG', 'INP001', 'S101',]  # 'PT011', 'PLR2004',
+"__init__.py" = ["F401", "F403", "F405",]
+"tests/*" = ["ANN", "ARG", "INP001", "S101",]  # "PT011", "PLR2004",
 
 
 [tool.ruff.pylint]
@@ -193,25 +193,17 @@ ban-relative-imports = "all"
 legacy_tox_ini = """
 [tox]
 envlist = py311, pypy3
-isolated_build = True
 
 [gh-actions]
 python =
     3.11: py311
-    pypy-3.9: pypy3
-
-[gh-actions:env]
-PLATFORM =
-    ubuntu-latest: linux
-    macos-latest: macos
-    windows-latest: windows
+    pypy-3.10: pypy3
 
 [testenv]
 passenv = GITHUB_*
-deps =
-    coverage[toml]
-    pytest
-    pytest-cov
+allowlist_externals = poetry
+
 commands =
-    coverage run -m pytest
+    poetry run pytest
+    poetry run coverage report
 """

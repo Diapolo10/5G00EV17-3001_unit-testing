@@ -15,25 +15,19 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        tox-env: [
-          py311,
-          # pypy3,
+        python-version: [
+          '3.11',
+          # pypy-3.10
         ]
-        include:
-          - tox-env: py311
-            python-version: '3.11'
-          # - tox-env: pypy3
-          #   python-version: pypy-3.9
 
         # exclude:
-          # - os: windows-latest
-          #   tox-env: pypy3
-          # - os: macos-latest
-          #   tox-env: pypy3
-          # - os: macos-latest
-          #   tox-env: py311
+        #   - os: windows-latest
+        #     python-version: 'pypy-3.10'
+        #   - os: macos-latest
+        #     python-version: 'pypy-3.10'
+
     env:
-      TOXENV: ${{ matrix.tox-env }}
+      PYTHON_VERSION: ${{ matrix.python-version }}
 
     steps:
 
@@ -58,16 +52,17 @@ jobs:
         poetry run tox
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PLATFORM: ${{ matrix.os }}
 
     - name: Upload Results to CodeCov
       if: success()
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v3
       with:
-        env_vars: TOXENV
+        env_vars: PYTHON_VERSION
         fail_ci_if_error: false
         files: ./tests/reports/coverage-html/index.html,./tests/reports/coverage.xml
         flags: unittests
-        name: ${{ matrix.os }}-${{ matrix.tox-env }}
+        name: "${{ matrix.os }} - Python ${{ matrix.python-version }}"
         token: ${{ secrets.CODECOV_TOKEN }}
 
 
