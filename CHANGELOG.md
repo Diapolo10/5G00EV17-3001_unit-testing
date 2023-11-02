@@ -50,32 +50,39 @@ Lorem Ipsum dolor sit amet.
 <!--
 _______________________________________________________________________________
 
-## [1.0.3] - 2023-10-03
+## [1.0.4] - 2023-11-02
 
-Updated dependencies, moved source code to `src`, made Ruff rules stricter,
-and fixed outdated `Makefile`.
-
-### Added
-
-- Added new rules for Ruff
-- Added hash support for the `Date` class
+Updated dependencies, and updated Tox configuration to fix coverage
+report generation.
 
 ### Changed
 
-- Moved the source code files under `src` to better match accepted best
-  practices
-- Updated outdated links in `CHANGELOG.md`
 - Updated dependencies
 - Updated localisation files
 
 ### Fixed
 
-- Fixed `Makefile`'s linting (it was still using `pyproject-flake8`
-  instead of Ruff)
-- Various linter fixes
-- `README.md` had an old version number for Python, this is now fixed
+- Coverage report generation via Tox was broken, this update
+  fixes that by changing how Tox is configured.
 
 -->
+
+_______________________________________________________________________________
+
+## [1.0.4] - 2023-11-02
+
+Updated dependencies, and updated Tox configuration to fix coverage
+report generation.
+
+### Changed
+
+- Updated dependencies
+- Updated localisation files
+
+### Fixed
+
+- Coverage report generation via Tox was broken, this update
+  fixes that by changing how Tox is configured.
 
 _______________________________________________________________________________
 
