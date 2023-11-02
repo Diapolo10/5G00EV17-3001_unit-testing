@@ -4,10 +4,10 @@ An example project for showcasing unit testing.
 
 |   Category   |  Badges  |
 |:------------:|---|
-| **PyPI**     | ![Python versions](https://img.shields.io/pypi/pyversions/5G00EV17-3001_unit-testing?logo=python) ![PyPI - Implementation](https://img.shields.io/pypi/implementation/5G00EV17-3001_unit-testing) |
+| **PyPI**     | ![Python versions](https://img.shields.io/pypi/pyversions/unit-testing?logo=python) ![PyPI - Implementation](https://img.shields.io/pypi/implementation/unit-testing) |
 | **Tests**    | [![codecov](https://codecov.io/gh/Diapolo10/5G00EV17-3001_unit-testing/branch/main/graph/badge.svg?token=FpaCuVjOAB)](https://codecov.io/gh/Diapolo10/5G00EV17-3001_unit-testing) ![Unit tests](https://github.com/diapolo10/5G00EV17-3001_unit-testing/workflows/Unit%20tests/badge.svg) ![Ruff](https://github.com/diapolo10/5G00EV17-3001_unit-testing/workflows/Ruff/badge.svg) |
 | **Activity** | ![GitHub contributors](https://img.shields.io/github/contributors/diapolo10/5G00EV17-3001_unit-testing) ![Last commit](https://img.shields.io/github/last-commit/diapolo10/5G00EV17-3001_unit-testing?logo=github)
-| **QA**       | [![CodeFactor](https://www.codefactor.io/repository/github/diapolo10/5G00EV17-3001_unit-testing/badge?logo=codefactor)](https://www.codefactor.io/repository/github/diapolo10/5G00EV17-3001_unit-testing) [![Rating](https://img.shields.io/librariesio/sourcerank/pypi/5G00EV17-3001_unit-testing)](https://libraries.io/github/Diapolo10/5G00EV17-3001_unit-testing/sourcerank) |
+| **QA**       | [![CodeFactor](https://www.codefactor.io/repository/github/diapolo10/5G00EV17-3001_unit-testing/badge?logo=codefactor)](https://www.codefactor.io/repository/github/diapolo10/5G00EV17-3001_unit-testing) [![Rating](https://img.shields.io/librariesio/sourcerank/pypi/unit-testing)](https://libraries.io/github/Diapolo10/unit-testing/sourcerank) |
 | **Other**    | [![License](https://img.shields.io/github/license/diapolo10/5G00EV17-3001_unit-testing)](https://opensource.org/licenses/MIT) ![Repository size](https://img.shields.io/github/repo-size/diapolo10/5G00EV17-3001_unit-testing?logo=github) ![Code size](https://img.shields.io/github/languages/code-size/diapolo10/5G00EV17-3001_unit-testing?logo=github) ![Lines of code](https://img.shields.io/tokei/lines/github/diapolo10/5G00EV17-3001_unit-testing?logo=github) |
 
 -------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ Python library, and adding unit tests to it. The project uses Pytest.
 
 The main project has no library dependencies, but the actual unit testing
 part relies on several packages listed in
-[`pyproject.toml`][pyproject.toml]. But in general, you'll need:
+[`pyproject.toml`][pyproject.toml]. In general, you'll need:
 
 - Python 3.11 or newer
 - Poetry
