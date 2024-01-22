@@ -142,7 +142,7 @@ class Date:
         else:
             self.day += 1
 
-    def print(self: Date) -> None:  # noqa: A003
+    def print(self: Date) -> None:
         """Print the current day."""
         print(self)  # noqa: T201
 
