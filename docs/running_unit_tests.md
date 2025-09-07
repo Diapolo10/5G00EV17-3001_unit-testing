@@ -1,6 +1,6 @@
 # Running unit tests
 
-The project's unit tests have been designed to be deceptively simple to run. They run automatically whenever code is pushed to GitHub (via GitHub Actions, using the [`unit_tests.yml` script](../.github/workflows/unit_tests.yml)), and they can be run manually via Poetry.
+The project's unit tests have been designed to be deceptively simple to run. They run automatically whenever code is pushed to GitHub (via GitHub Actions, using the [`unit_tests.yml` script](../.github/workflows/unit_tests.yml)), and they can be run manually via uv.
 
 ## Unit tests in GitHub Actions
 
@@ -10,7 +10,7 @@ Additionally, while noot unit testing, two linter workflows for Pylint and Flake
 
 ## Unit tests locally
 
-The project's unit tests can be run via Poetry, which takes care of the unit test configuration and other things. To run the unit tests, the project must first be installed - more on that [here](installation.md). Once the project has been installed, the unit tests can be run by first activating the project's virtual environment (`poetry shell`), and then telling Poetry to run the unit tests (`poetry run pytest`). In the same vein, linters can be run locally via `poetry run pflake8` and `poetry run pylint unit_testing`.
+The project's unit tests can be run via uv, which takes care of the unit test configuration and other things. To run the unit tests, the project must first be installed - more on that [here](installation.md). Once the project has been installed, the unit tests can be run by running `uv run pytest`. In the same vein, linters can be run locally via `uv run ruff check .`.
 
 On Linux distros and Mac OS, you may alternatively use the provided [`Makefile`](../Makefile) and simply run `make all` to run everything. The shell commands it uses are not compatible with Windows, unless specifically using a Bash terminal.
 

@@ -14,10 +14,18 @@ jobs:
     steps:
 
     - name: Checkout repository
-      uses: actions/checkout@master
+      uses: actions/checkout@v5
 
-    - name: Publish distribution 📦 to PyPI
-      uses: JRubics/poetry-publish@v2.1
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
       with:
-        ignore_dev_requirements: 'yes'
-        pypi_token: ${{ secrets.PYPI_PASSWORD }}
+        cache-dependency-glob: "uv.lock"
+        enable-cache: true
+
+    - name: Build release
+      run: |
+        uv build
+
+    - name: Publish test release 📦 to Test PyPI
+      run: |
+        uv publish --token ${{ secrets.PYPI_PASSWORD }}
