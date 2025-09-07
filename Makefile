@@ -3,7 +3,7 @@
 PYMODULE := unit_testing
 TESTS := tests
 INSTALL_STAMP := .install.stamp
-POETRY := $(shell command -v poetry 2> /dev/null)
+UV := $(shell command -v uv 2> /dev/null)
 MYPY := $(shell command -v mypy 2> /dev/null)
 
 .DEFAULT_GOAL := help
@@ -26,9 +26,8 @@ help:
 
 install: $(INSTALL_STAMP)
 $(INSTALL_STAMP): pyproject.toml
-	@if [ -z $(POETRY) ]; then echo "Poetry could not be found. See https://python-poetry.org/docs/"; exit 2; fi
-	$(POETRY) run pip install --upgrade pip setuptools
-	$(POETRY) install
+	@if [ -z $(UV) ]; then echo "uv could not be found. See https://docs.astral.sh/uv/"; exit 2; fi
+	$(UV) sync
 	touch $(INSTALL_STAMP)
 
 .PHONY: lint
@@ -36,14 +35,14 @@ lint: $(INSTALL_STAMP)
     # Configured in pyproject.toml
     # Skips mypy if not installed
     # 
-    # $(POETRY) run black --check $(TESTS) $(PYMODULE) --diff
-	@if [ -z $(MYPY) ]; then echo "Mypy not found, skipping..."; else echo "Running Mypy..."; $(POETRY) run mypy $(PYMODULE) $(TESTS); fi
-	@echo "Running Ruff..."; $(POETRY) run ruff . --fix
+    # $(UV) run black --check $(TESTS) $(PYMODULE) --diff
+	@if [ -z $(MYPY) ]; then echo "Mypy not found, skipping..."; else echo "Running Mypy..."; $(UV) run mypy $(PYMODULE) $(TESTS); fi
+	@echo "Running Ruff..."; $(UV) run ruff . --fix
 
 .PHONY: test
 test: $(INSTALL_STAMP)
     # Configured in pyproject.toml
-	$(POETRY) run pytest
+	$(UV) run pytest
 
 .PHONY: clean
 clean:

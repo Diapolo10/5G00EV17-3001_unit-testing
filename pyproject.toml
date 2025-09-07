@@ -1,37 +1,21 @@
 [build-system]
-requires = ["poetry-core>=1.2.0", "wheel",]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.8.15,<0.9.0"]
+build-backend = "uv_build"
 
-
-[tool.coverage.run]
-branch = true
-relative_files = true
-omit = [
-    ".tox/*",
-    "tests/*",
-]
-
-
-[tool.poetry]
+[project]
 name = "unit-testing"
 version = "1.0.4"
 description = "An example project for showcasing unit testing."
-
-packages = [
-    { include = "unit_testing", from = "src" },
-]
-
-authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
-maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
-
-include = []
-license = "MIT"
 readme = "README.md"
-
-homepage = "https://pypi.org/project/5G00EV17-3001_unit-testing/"
-repository = "https://github.com/Diapolo10/5G00EV17-3001_unit-testing"
-documentation = "https://github.com/Diapolo10/5G00EV17-3001_unit-testing/tree/main/docs"
-
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = []
+authors = [
+    { name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" },
+]
+maintainers = [
+    { name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" },
+]
 keywords = [
     "python3",
 ]
@@ -41,44 +25,35 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Typing :: Typed",
 ]
 
+[dependency-groups]
+dev = [
+    "mypy>=1.17.1",
+    "pytest>=8.4.2",
+    "pytest-cov>=6.3.0",
+    "ruff>=0.12.12",
+    "tox>=4.30.2",
+    "tox-gh-actions>=3.3.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11.0"
+[project.urls]
+Repository = "https://github.com/Diapolo10/unit_testing"
+Changelog = "https://github.com/Diapolo10/unit_testing/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/Diapolo10/unit_testing/tree/main/docs"
+Tracker = "https://github.com/Diapolo10/unit_testing/issues"
 
-
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.11.1"
-
-
-[tool.poetry.group.linters]
-optional = true
-
-
-[tool.poetry.group.linters.dependencies]
-ruff = ">=0.6.1,<0.13.0"
-
-
-[tool.poetry.group.tests]
-optional = true
-
-
-[tool.poetry.group.tests.dependencies]
-pytest = "^8.3.2"
-pytest-cov = ">=5,<7"
-tox = "^4.18.0"
-tox-gh-actions = "^3.2.0"
-
-
-[tool.poetry.urls]
-"Source code" = "https://github.com/Diapolo10/unit_testing"
-"Tracker" = "https://github.com/Diapolo10/unit_testing/issues"
-"Changelog" = "https://github.com/Diapolo10/unit_testing/blob/main/CHANGELOG.md"
-
+[tool.coverage.run]
+branch = true
+relative_files = true
+omit = [
+    ".tox/*",
+    "tests/*",
+]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
@@ -96,96 +71,34 @@ testpaths = [
 
 [tool.ruff]
 lint.select = [
-    "A",     # Builtins
-    "ANN",   # Annotations
-    "ARG",   # Unused arguments
-    "ASYNC", # Asynchronous code
-    "B",     # Bugbear
-    "BLE",   # Blind except
-    "C4",    # Comprehensions
-    "C90",   # mccabe
-    "COM",   # Commas
-    # "CPY",   # Copyright
-    "D1",    # Undocumented public elements
-    "D2",    # Docstring conventions
-    "D3",    # Triple double quotes
-    "D4",    # Docstring text format
-    "DTZ",   # Datetimes
-    "E",     # Errors
-    "EM",    # Error messages
-    "ERA",   # Commented-out code
-    "EXE",   # Executable
-    "F",     # Pyflakes
-    "FA",    # __future__ annotations
-    "FBT",   # "Boolean trap"
-    "FIX",   # "FIXME"-comments
-    "FLY",   # F-strings
-    # "FURB",  # Refurb
-    "G",     # Logging format
-    "I",     # Isort
-    "ICN",   # Import conventions
-    "INP",   # Disallow PEP-420 (Implicit namespace packages)
-    "INT",   # gettext
-    "ISC",   # Implicit str concat
-    "LOG",   # Logging
-    "N",     # PEP-8 Naming
-    "PERF",  # Unnecessary performance costs
-    "PGH",   # Pygrep hooks
-    "PIE",   # Unnecessary code
-    "PL",    # Pylint
-    "PT",    # Pytest
-    "PTH",   # Use Pathlib
-    "PYI",   # Stub files
-    "Q",     # Quotes
-    "RET",   # Return
-    "RUF",   # Ruff
-    "RSE",   # Raise
-    "S",     # Bandit
-    "SIM",   # Code simplification
-    "SLF",   # Private member access
-    "SLOT",  # __slots__
-    "T10",   # Debugger
-    "T20",   # Print
-    "TCH",   # Type checking
-    "TD",    # "TODO"-comments
-    "TID",   # Tidy imports
-    "TRY",   # Exception handling
-    "UP",    # Pyupgrade
-    "W",     # Warnings
-    "YTT",   # sys.version
+    "ALL"
 ]
 lint.ignore = [
-    "ANN101",  # Type annotation for `self`
+    "COM812",  # Missing trailing comma (disabled due to formatter conflict)
     "D203",    # One blank line before class docstring
     "D212",    # Multi-line summary first line
+    "ISC001",  # Single-line implicit string concatenation (disabled due to formatter conflict)
     "PLR0913", # Too many arguments
     "Q000",    # Single quotes found but double quotes preferred
 ]
 line-length = 120
-# preview = true
 show-fixes = true
 src = ["src",]
-target-version = "py311"
-
 
 [tool.ruff.lint.flake8-copyright]
 author = "Lari Liuhamo"
-
 
 [tool.ruff.lint.flake8-quotes]
 docstring-quotes = "double"
 multiline-quotes = "double"
 
-
 [tool.ruff.lint.mccabe]
 max-complexity = 10
 
-
 [tool.ruff.lint.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
-"__init__.py" = ["F401", "F403", "F405",]
-"tests/*" = ["ANN", "ARG", "INP001", "S101",]  # "PT011", "PLR2004",
-
+"__init__.py" = ["F401", "F403", "F405", "PGH003",]
+"tests/*" = ["ANN", "ARG", "INP001", "S101",]
 
 [tool.ruff.lint.pylint]
 max-args = 15
@@ -193,10 +106,8 @@ max-branches = 20
 max-returns = 10
 max-statements = 80
 
-
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
-
 
 [tool.tox]
 legacy_tox_ini = """
@@ -207,13 +118,15 @@ skip_missing_interpreters = true
 [gh-actions]
 python =
     3.11: py311
-    pypy-3.10: pypy3
+    pypy-3.11: pypy3
 
 [testenv]
-passenv = GITHUB_*
-allowlist_externals = poetry
+passenv =
+    GITHUB_*
+    FORCE_COLOR
+allowlist_externals = uv
 
 commands =
-    poetry run pytest
-    poetry run coverage report
+    uv run --frozen pytest
+    uv run --frozen coverage report
 """

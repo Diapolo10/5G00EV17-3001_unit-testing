@@ -27,7 +27,7 @@ def test_date_default_methods(default_date: Date) -> None:
 
     default_date.next_day()
 
-    assert default_date.day == DEFAULT_DAY+1
+    assert default_date.day == DEFAULT_DAY + 1
     assert default_date.month == DEFAULT_MONTH
     assert default_date.year == DEFAULT_YEAR
 
@@ -79,7 +79,7 @@ def test_date_print(default_date: Date, capsys: Generator[pytest.CaptureFixture[
     """'Tests' the printing functionality."""
     default_date.print()
     captured = capsys.readouterr()  # type: ignore[attr-defined]
-    assert captured.out == f'{DEFAULT_DAY}/{DEFAULT_MONTH}/{DEFAULT_YEAR}\n'
+    assert captured.out == f"{DEFAULT_DAY}/{DEFAULT_MONTH}/{DEFAULT_YEAR}\n"
 
 
 def test_date_comparisons() -> None:
@@ -113,7 +113,7 @@ def test_date_comparisons() -> None:
     assert (date_1 > None) is False
     assert (date_1 <= None) is False
     assert (date_1 >= None) is False
-    assert (date_1 == 'foo') is False
+    assert (date_1 == "foo") is False
 
 
 def test_date_leap_year() -> None:
@@ -155,6 +155,6 @@ def test_week_later(default_date: Date) -> None:
     """Tests calculating the data a week later."""
     new_date = week_later(default_date)
 
-    assert new_date.day == DEFAULT_DAY+7
+    assert new_date.day == DEFAULT_DAY + 7
     assert new_date.month == DEFAULT_MONTH
     assert new_date.year == DEFAULT_YEAR

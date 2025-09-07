@@ -26,7 +26,7 @@ part relies on several packages listed in
 [`pyproject.toml`][pyproject.toml]. In general, you'll need:
 
 - Python 3.11 or newer
-- Poetry
+- uv
 
 The project is automatically tested on the latest versions of Windows,
 Mac OS, and Ubuntu, and it has also been tested on both CPython
