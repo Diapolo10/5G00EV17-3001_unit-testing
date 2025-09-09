@@ -63,7 +63,7 @@ jobs:
 
     - name: Run Tox (Pytest + Coverage)
       run: |
-        uvx --with tox-uv tox
+        uvx --with tox-uv tox -e ${{ env.TOXENV }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PLATFORM: ${{ matrix.os }}
