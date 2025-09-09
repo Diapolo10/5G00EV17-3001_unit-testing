@@ -44,6 +44,7 @@ jobs:
 
     env:
       PYTHON_VERSION: ${{ matrix.python-version }}
+      TOXENV: ${{ matrix.python-version == 'pypy-3.11' && 'pypy3' || format('py{0}', replace(matrix.python-version, '.', '')) }}
 
     steps:
 
