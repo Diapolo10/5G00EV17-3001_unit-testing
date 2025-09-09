@@ -44,7 +44,6 @@ jobs:
 
     env:
       PYTHON_VERSION: ${{ matrix.python-version }}
-      TOXENV: ${{ matrix.python-version == 'pypy-3.11' && 'pypy3' || format('py{0}', replace(matrix.python-version, '.', '')) }}
 
     steps:
 
@@ -64,7 +63,7 @@ jobs:
 
     - name: Run Tox (Pytest + Coverage)
       run: |
-        uvx --with tox-uv tox -e ${{ env.TOXENV }}
+        uv run tox
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PLATFORM: ${{ matrix.os }}
