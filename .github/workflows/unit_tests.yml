@@ -9,9 +9,8 @@ name: Unit tests
 
 on:
   push:
-    branches-ignore:
-      - 'dependabot/**'  # Avoid duplicates; only run the PR, not the push
-      - 'gh-pages'  # GitHub Pages do not trigger all tests
+    branches:
+      - 'main'
     tags-ignore:
       - 'v*'  # Avoid re-running existing commit on release
   pull_request:
