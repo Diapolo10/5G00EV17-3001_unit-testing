@@ -127,6 +127,6 @@ passenv =
 allowlist_externals = uv
 
 commands =
-    uv run --frozen pytest
-    uv run --frozen coverage report
+    uv run --active --frozen pytest
+    uv run --active --frozen coverage report
 """

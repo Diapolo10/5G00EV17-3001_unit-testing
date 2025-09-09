@@ -9,9 +9,8 @@ name: Unit tests
 
 on:
   push:
-    branches-ignore:
-      - 'dependabot/**'  # Avoid duplicates; only run the PR, not the push
-      - 'gh-pages'  # GitHub Pages do not trigger all tests
+    branches:
+      - 'main'
     tags-ignore:
       - 'v*'  # Avoid re-running existing commit on release
   pull_request:
@@ -63,7 +62,7 @@ jobs:
 
     - name: Run Tox (Pytest + Coverage)
       run: |
-        uvx --with tox-uv tox
+        uv run tox
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PLATFORM: ${{ matrix.os }}
