@@ -1,24 +1,18 @@
 [build-system]
-requires = ["uv_build>=0.8.15,<0.12.0"]
-build-backend = "uv_build"
+requires = ["hatchling", "uv-dynamic-versioning>=0.7.0"]
+build-backend = "hatchling.build"
 
 [project]
 name = "unit-testing"
-version = "1.0.4"
+dynamic = ["version"]
 description = "An example project for showcasing unit testing."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
 dependencies = []
-authors = [
-    { name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" },
-]
-maintainers = [
-    { name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" },
-]
-keywords = [
-    "python3",
-]
+authors = [{ name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" }]
+maintainers = [{ name = "Lari Liuhamo", email = "lari.liuhamo+pypi@gmail.com" }]
+keywords = ["python3"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
@@ -33,9 +27,9 @@ classifiers = [
 
 [dependency-groups]
 dev = [
-    "mypy>=1.17.1",
-    "pytest>=8.4.2",
-    "pytest-cov>=6.3.0",
+    "mypy>=2.1.0",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
     "ruff>=0.12.12",
     "tox>=4.30.2",
     "tox-gh-actions>=3.3.0",
@@ -50,29 +44,43 @@ Tracker = "https://github.com/Diapolo10/unit_testing/issues"
 [tool.coverage.run]
 branch = true
 relative_files = true
-omit = [
-    ".tox/*",
-    "tests/*",
+omit = [".tox/*", "tests/*"]
+
+[tool.coverage.report]
+exclude_also = [
+    "pragma: not covered",
+    "@overload",
+    "except importlib.metadata.PackageNotFoundError:",
 ]
 
-[tool.pytest.ini_options]
-minversion = "7.0"
-addopts = """
---doctest-modules \
---cov=./ \
---cov-append \
---cov-report html:tests/reports/coverage-html \
---cov-report xml:tests/reports/coverage.xml \
---ignore=docs/
-"""
-testpaths = [
-    "tests",
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.mypy]
+exclude = ["tests/"]
+exclude_gitignore = true
+strict = true
+strict_equality = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.pytest]
+minversion = "9.0"
+addopts = [
+    "--doctest-modules",
+    "--cov=./",
+    "--cov-append",
+    "--cov-fail-under=80",
+    "--cov-report=html:tests/reports/coverage-html",
+    "--cov-report=term-missing:skip-covered",
+    "--cov-report=xml:tests/reports/coverage.xml",
+    "--ignore=docs/",
 ]
+testpaths = ["tests"]
 
 [tool.ruff]
-lint.select = [
-    "ALL"
-]
+lint.select = ["ALL"]
 lint.ignore = [
     "COM812",  # Missing trailing comma (disabled due to formatter conflict)
     "D203",    # One blank line before class docstring
@@ -83,7 +91,6 @@ lint.ignore = [
 ]
 line-length = 120
 show-fixes = true
-src = ["src",]
 
 [tool.ruff.lint.flake8-copyright]
 author = "Lari Liuhamo"
@@ -97,8 +104,8 @@ max-complexity = 10
 
 [tool.ruff.lint.per-file-ignores]
 # https://beta.ruff.rs/docs/rules/
-"__init__.py" = ["F401", "F403", "F405", "PGH003",]
-"tests/*" = ["ANN", "ARG", "INP001", "S101",]
+"__init__.py" = ["F401", "F403", "F405", "PGH003"]
+"tests/*" = ["ANN", "ARG", "INP001", "PLR2004", "S101"]
 
 [tool.ruff.lint.pylint]
 max-args = 15
@@ -130,3 +137,16 @@ commands =
     uv run --active --frozen pytest
     uv run --active --frozen coverage report
 """
+
+[tool.uv]
+cache-keys = [
+    { file = "pyproject.toml" },
+    { git = { commit = true, tags = true } },
+]
+constraint-dependencies = ["pygments>=2.20.0"]
+
+[tool.uv-dynamic-versioning]
+bump = true
+fallback-version = "0.0.0"
+style = "pep440"
+vcs = "git"
