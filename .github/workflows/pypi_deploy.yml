@@ -15,6 +15,9 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v6
+      with:
+        fetch-depth: 0  # Fetch all history for versioning
+        fetch-tags: true  # Fetch tags for versioning
 
     - name: Install uv
       uses: astral-sh/setup-uv@v7
@@ -23,9 +26,11 @@ jobs:
         enable-cache: true
 
     - name: Build release
-      run: |
-        uv build
+      run: uv build
 
-    - name: Publish test release 📦 to Test PyPI
-      run: |
-        uv publish --token ${{ secrets.PYPI_PASSWORD }}
+    - name: Publish distribution 📦 to PyPI
+      run: uv publish
+      env:
+        UV_PUBLISH_URL: https://upload.pypi.org/legacy/
+        UV_PUBLISH_CHECK_URL: https://pypi.org/simple/
+        UV_PUBLISH_TOKEN: ${{ secrets.PYPI_PASSWORD }}

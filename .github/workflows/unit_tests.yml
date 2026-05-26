@@ -89,14 +89,12 @@ jobs:
         enable-cache: true
 
     - name: Build release
-      run: |
-        uv build
+      run: uv build
 
     - name: Publish test release 📦 to Test PyPI
+      run: uv publish
       continue-on-error: true
       env:
         UV_PUBLISH_URL: https://test.pypi.org/legacy/
         UV_PUBLISH_CHECK_URL: https://test.pypi.org/simple/
         UV_PUBLISH_TOKEN: ${{ secrets.TEST_PYPI_PASSWORD }}
-      run: |
-        uv publish
