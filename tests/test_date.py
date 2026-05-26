@@ -37,9 +37,9 @@ def test_date_next_day(default_date: Date) -> None:
     date = Date(30, Months.MARCH, 2022)
     default_date.next_day(previous=date)
 
-    assert default_date.day == 31  # noqa: PLR2004
+    assert default_date.day == 31
     assert default_date.month == Months.MARCH
-    assert default_date.year == 2022  # noqa: PLR2004
+    assert default_date.year == 2022
 
 
 def test_date_year_change() -> None:
@@ -49,7 +49,7 @@ def test_date_year_change() -> None:
 
     assert date.day == 1
     assert date.month == 1
-    assert date.year == 2000  # noqa: PLR2004
+    assert date.year == 2000
     assert date.leap_year() is True
 
 
@@ -59,8 +59,8 @@ def test_date_month_change() -> None:
     date.next_day()
 
     assert date.day == 1
-    assert date.month == 3  # noqa: PLR2004
-    assert date.year == 2001  # noqa: PLR2004
+    assert date.month == 3
+    assert date.year == 2001
 
 
 def test_date_day_error() -> None:
@@ -136,10 +136,10 @@ def test_date_days_between() -> None:
     date_3 = Date(5, 2, 1998)
     date_4 = Date(24, 1, 2005)
 
-    assert date_1.days_between(date_2) == 7  # noqa: PLR2004
-    assert date_1.days_between(date_3) == 12  # noqa: PLR2004
-    assert date_1.days_between(date_4) == 2557  # noqa: PLR2004
-    assert date_4.days_between(date_1) == 2557  # noqa: PLR2004
+    assert date_1.days_between(date_2) == 7
+    assert date_1.days_between(date_3) == 12
+    assert date_1.days_between(date_4) == 2557
+    assert date_4.days_between(date_1) == 2557
 
 
 def test_date_days_since_new_year() -> None:
@@ -147,8 +147,8 @@ def test_date_days_since_new_year() -> None:
     date_1 = Date(31, 1, 2022)
     date_2 = Date(31, 12, 2022)
 
-    assert date_1.days_since_new_year() == 30  # noqa: PLR2004
-    assert date_2.days_since_new_year() == 364  # noqa: PLR2004
+    assert date_1.days_since_new_year() == 30
+    assert date_2.days_since_new_year() == 364
 
 
 def test_week_later(default_date: Date) -> None:
