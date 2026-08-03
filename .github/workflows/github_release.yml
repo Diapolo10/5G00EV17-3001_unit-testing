@@ -65,7 +65,7 @@ jobs:
           name: built-binary
 
       - name: Check Version
-        uses: nowsprinting/check-version-format-action@v5.0.2
+        uses: nowsprinting/check-version-format-action@v5.0.3
         id: version
         with:
           prefix: 'v'
